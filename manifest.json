@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Clicker Tool",
+  "version": "1.0.0",
+  "description": "Select an element and auto-click it directly.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Auto Clicker"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
